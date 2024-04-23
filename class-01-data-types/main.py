@@ -17,5 +17,3 @@ print("E tem " + life_cat + " vidas")
 
 print("O gato bebe " + milk + " e tem " + life_cat + " vidas")
 print(f"O gato bebe {milk} e tem {life_cat} vidas")
-
-print("teste")

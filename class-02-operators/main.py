@@ -44,3 +44,24 @@ print(2 < 3)
 print(2 <= 3)
 print(3 > 3)
 print(3 >= 3)
+print(1 == "1")
+
+# Logical
+
+print(True and False)
+print(True and False)
+print(False and True)
+print(False and False)
+print(True or False)
+print(True or False)
+print(False or True)
+print(False or False)
+
+print(not True)
+print(not False)
+
+print(2 == 2 and 3 == 3)
+print(2 != 2 and 3 == 3)
+print(2 == 2 or 3 != 3)
+print(2 != 2 or 3 != 3)
+print(2 != 2 or not 3 == 3)

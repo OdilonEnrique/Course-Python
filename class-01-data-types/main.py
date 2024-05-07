@@ -20,18 +20,18 @@ print("E tem " + life_cat + " vidas")
 print("O gato bebe " + milk + " e tem " + life_cat + " vidas")
 print(f"O gato bebe {milk} e tem {life_cat} vidas")
 
-name = "Odilon"
+name = "Emanuel"
 age = 31
-is_admin = False # Boolean True or False 
+is_admin = False #boolean True or False
 
 print(is_admin)
 print(type(is_admin))
 
-# Structures Types (Collections)
+# Structural Types (Collections)
 
 animes = ["Dragon Ball", "Naruto", "Jojo", "Death Note"]
-#      =>       0              1        2         3
-#      <=      -4             -3       -2        -1
+            # =>  0           1         2          3 
+            # <= -4          -3        -2         -1
 
 print(animes)
 print(type(animes))
@@ -43,33 +43,29 @@ list = ["A", 123, True, ["B", "C"]]
 
 print(list[0])
 print(list[3])
-print(list[3][1])
-print(list[3][0])
 print(list[-1])
-print(list[-1][-1])
-print(list[-1][-2])
+print(list[-1][1])
 
 list[2] = False
 list[-1][0] = "D"
 print(list)
 print(len(list)) # length
 
-# tuple 
-
+# tuple
 tuple = ("A", 123, True)
-print(tuple[1])
 print(type(tuple))
+print(tuple[1])
 
-#tuple[1] = 798 # tuple is immutable
+# tuple[1] = 798 # error: tuple is immutable
 
-#print(tuple) # Retorna um erro
+print(tuple)
 
-# dict 
+# dict
 
 dict = {
-    "name": "Odilon",
-    "age": 18,
-    "is_admin": True
+  "name": "Emanuel",
+  "age": 31,
+  "is_admin": True
 }
 
 print(dict)

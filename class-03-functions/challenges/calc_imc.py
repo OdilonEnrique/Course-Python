@@ -1,10 +1,11 @@
-# Crie uma função que receba altura e peso e retorne o IMC
-def calc_IMC(height, weight):
-    IMC = weight / height**2
-    return IMC
+# Defina uma função que receba como parâmetros altura e peso e retorne o IMC
+
+def calc_imc(height, weight):
+  imc = weight / (height * height)
+  return imc
 
 height = float(input("Digite sua altura(m): "))
 weight = float(input("Digite seu peso(kg): "))
+imc = calc_imc(height, weight) 
 
-result = calc_IMC(height, weight)
-print(f"Seu IMC é {result:.2f}Kg/m²")
+print(f"Seu IMC é {imc:.2f}")

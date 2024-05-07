@@ -2,6 +2,5 @@
 # Atribua o nome a uma variável
 # Imprima na tela uma mensagem de boas vindas com o nome 
 
-name = input("Digite o seu nome --> ")
-
-print(f"Olá {name}! Seja Bem-Vindo ao Curso de Python !!!")
+name = input("Digite seu nome: ")
+print(f"Bem-vindo(a), {name}!")

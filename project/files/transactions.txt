@@ -1,2 +1,13 @@
 deposito (+),  10.0
 deposito (+),  1000.0
+deposito (+),  100.0
+deposito (+),  10.0
+deposito (+),  100.0
+deposito (+),  100.0
+saque (-),  50.0
+deposito (+),  1000.0
+saque (-),  300.0
+saque (-),  10.0
+deposito (+),  40.0
+saque (-),  50.0
+deposito (+),  50.0

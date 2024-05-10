@@ -2,6 +2,35 @@ class Bank_account:
     def __init__(self, balance = 0):
         self.__balance = balance
         self.__file = "project/files/transactions.txt"
+        self.__transactions = []
+        self._load_transactions()
+
+    def check_statement(self):
+        print("==== Extarto ====")
+        
+        for transaction in self.__transactions:
+            print(f"{transaction[0]}, {transaction[1]}") 
+
+        print("=================")
+        print(f"Saldo (=): {self.__balance}")
+        print("=================")
+
+
+    def _load_transactions(self):
+        try:
+            with open(self.__file, "r") as file:
+                for line in file:
+                    transaction, amount = line.strip().split(", ")
+                    amount = float(amount)
+                    self.__transactions.append((transaction, amount))
+
+                    if transaction == "deposito (+)":
+                        self.__balance += amount
+                    elif transaction == "saque (-)":
+                        self.__balance -= amount
+        except:
+            print("Algo deu errado em abrir o arquivo!")
+            pass
 
     def deposit(self, amount):
         self.__balance += amount
@@ -9,12 +38,31 @@ class Bank_account:
         try:
             with open(self.__file, "a") as file:
                 file.write(f"deposito (+),  {amount}\n")
+                self.__transactions.append(("deposito (+)", amount))
         except:
             print("Algo deu errado em abrir o arquivo!")
             pass
 
         print(f"Depósito de R${amount} realizado!")        
 
+    def withdraw(self, amount):
+        if amount == 0:
+            return print("Saque deve ser maior que zero!")
+        
+        if amount <= self.__balance:
+            self.__balance -= amount
+
+            try:
+                with open(self.__file, "a") as file:
+                    file.write(f"saque (-),  {amount}\n")
+                    self.__transactions.append(("saque (-)", amount))
+            except:
+                print("Algo deu errado em abrir o arquivo!")
+                pass
+
+            print(f"Saque de R${amount} realizado!")       
+        else:
+            print("Saldo Insuficiente")
 account = Bank_account()
 waiting_menu = False # Flag
 
@@ -40,12 +88,13 @@ while True:
     print("")
 
     if option == "1":
-        print("extratro")
+        account.check_statement()
     elif option == "2":
         amount = float(input("Digite o valor para depositar:"))
         account.deposit(amount)
     elif option == "3":
-        print("saque")
+        amount = float(input("Digite o valor para saque:"))
+        account.withdraw(amount)
     elif option == "4":
         print("Programa encerrado!\n")
         break
